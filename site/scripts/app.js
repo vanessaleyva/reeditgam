@@ -23,11 +23,17 @@ modulo1.controller("mainCtrl",[
 			$scope.posts.push(
 			{
 				title: $scope.title,
+				link: $scope.link,
 			 upvotes: 0
 			});
 			//Two-way data binding
 			$scope.title = "";
+			$scope.link = "";
 		};
+
+		$scope.incrementUpvotes = function(post){
+			post.upvotes += 1;
+		}
 		
 
 	}]);
