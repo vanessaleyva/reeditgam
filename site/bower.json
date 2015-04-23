@@ -1,0 +1,19 @@
+{
+  "name": "prueba",
+  "version": "1.0.0",
+  "authors": [
+    "gamaliellobato <gamaliellobato@gmail.com>"
+  ],
+  "description": "paw",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "www.gamaliel.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
