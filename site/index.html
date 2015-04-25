@@ -2,50 +2,24 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>ReedItgam APP</title>
-	<link rel="stylesheet"
-	 href="./vendor/bootstrap/css/bootstrap.css">
-	 <style>
-	 .glyphicon-thumbs-up {cursor: pointer;}
-	 </style>
+	<title>ReediItgam APP</title>
 </head>
 <body ng-app="reeditgam" 
 	ng-controller="mainCtrl">
-
-	
-	<!--creando formulario-->
-	<form ng-submit= "addPost()">
-
-<input type="text" ng-model="title">
-<br>
-<input type="text" ng-model="link">
-<br>
-<button type="submin">Post</button>
-
-	</form>
-
-	<div ng-repeat="post in posts | orderBy: '- upvotes'">
-		<span ng-click="incrementUpvotes(post)">+</span>
-
-		<a ng-show="post.link" href="{{post.link}}">
-			{{post.title}}
-		</a>
-		<span ng-hide="post.link">
-			{{post.title}}
-		</span>
-		 - Likes: {{post.upvotes}}
+	<div>
+		{{test}}
 	</div>
-	<!-- CArgando librerias -->
-	<!-- es una buena practica al final cargar los scripts -->
-	<!-- cargando angular-->
+	<!-- Cargando Librerias -->
+	<!-- Es buena practica al final -->
+	<!-- cargar los scrips -->
+	<!-- Cargando a Angular -->
 	<script 
-	type="text/javascript"
-	src="vendor/angular/angular.js"
-	>
-	</script>
-	<script 
-	type="text/javascript"
-	src="scripts/app.js">
-	</script>		
+		type="text/javascript"
+		src="./vendor/angular/angular.js">
+		</script>
+	<!-- Cargando app.js -->
+	<script
+		type="text/javascript"
+		src="./scripts/app.js"></script>
 </body>
 </html>
