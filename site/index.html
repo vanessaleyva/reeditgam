@@ -1,3 +1,4 @@
+<!-- https://github.com/rivalcoba/reeditgam.git -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,32 +11,65 @@
 	</style>
 </head>
 <body ng-app="reeditgam" 
-	ng-controller="mainCtrl">	
-	<!-- Creando el formulario -->
-	<form ng-submit="addPost()">
-		<!-- Input del Titulo -->
-		<input type="text" ng-model="title">
-		<br>
-		<!-- Input del link -->
-		<input type="text" ng-model="link">
-		<br>
-		<button type="submit">Post</button>
-	</form>
-
-	<div ng-repeat="post in posts | orderBy: '-upvotes'">
-		<span ng-click="incrementUpvotes(post)">^</span>
-		<!-- Agregando los links -->
-		<a ng-show="post.link" href="{{post.link}}">
-			{{post.title}}	
-		</a>
-		<span ng-hide="post.link">
-			{{post.title}}
-		</span>
-		- Likes: {{post.upvotes}}
+	ng-controller="mainCtrl">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="page-header">
+				<h1>Reeditgam!!!</h1>
+			</div>	
+			<!-- Creando el formulario -->
+			<form ng-submit="addPost()"
+			style="margin-top:30px;">
+				<h3>Agregar un nuevo Post</h3>
+				<div class="form-group">					
+					<!-- Input del Titulo -->
+					<input
+						class="form-control"
+						placeholder="Title"
+						type="text" 
+						ng-model="title">
+				</div>
+				<div class="form-group">	
+					<input
+						class="form-control"
+						placeholder="Link" 
+						type="text" 
+						ng-model="link">
+				</div>
+				<!-- Input del link -->
+				<button 
+					class="btn btn-primary"
+					type="submit">Post</button>
+			</form>
+			<!-- Se renderean post -->
+			<div ng-repeat="post in posts | orderBy: '-upvotes'">
+				<span class="glyphicon glyphicon-thumbs-up" 
+					ng-click="incrementUpvotes(post)"></span>
+				{{post.upvotes}}
+				<span style="font-size:20px; margin-left:10px">
+					<!-- Agregando los links -->
+					<a ng-show="post.link" href="{{post.link}}">
+						{{post.title}}	
+					</a>
+					<span ng-hide="post.link">
+						{{post.title}}
+					</span>
+				</span>
+			</div>		
+		</div>
 	</div>
+	
 	<!-- Cargando Librerias -->
 	<!-- Es buena practica al final -->
 	<!-- cargar los scrips -->
+	<!-- Cargando Jquery -->
+	<script
+		src="./vendor/jquery/jquery.js">
+		</script>
+	<!-- Cargando Script bootstrap -->
+	<script
+		src="./vendor/bootstrap/js/bootstrap.js">
+		</script>
 	<!-- Cargando a Angular -->
 	<script 
 		type="text/javascript"
